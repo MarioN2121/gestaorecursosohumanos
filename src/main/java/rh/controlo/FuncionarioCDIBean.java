@@ -1,15 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package rh.controlo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import rh.modelo.Funcionario;
 
 /**
@@ -17,14 +17,15 @@ import rh.modelo.Funcionario;
  * @author Ary
  */
 @Named(value = "funcionarioCDIBean")
-@RequestScoped
-public class FuncionarioCDIBean {
+@SessionScoped
+public class FuncionarioCDIBean implements Serializable{
 
-    Funcionario funcionario1 = new Funcionario("Mário","Novais","Informática",40,77000.00);
-    Funcionario funcionario2 = new Funcionario("Pedro","Silva","Gestor",40,77000.00);
-    Funcionario funcionario3 = new Funcionario("Walter","Miranda","Contabilidade",40,77000.00);
+    Funcionario funcionario1 = new Funcionario("Mário","Novais","Informática",77000.00);
+    Funcionario funcionario2 = new Funcionario("Pedro","Silva","Gestor",77000.00);
+    Funcionario funcionario3 = new Funcionario("Walter","Miranda","Contabilidade",77000.00);
     
-    //Funcionario(String nome, String sobrenome, String departamento, int idade, double salario)
+    Funcionario funcionario = new Funcionario(); 
+    
     List<Funcionario> funcionarios = new ArrayList<>();
     
     @PostConstruct
@@ -41,6 +42,29 @@ public class FuncionarioCDIBean {
     public void setFuncionarios(List<Funcionario> funcionarios) {
         this.funcionarios = funcionarios;
     }
+    
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
+    }
+    
+    public String guardar(){
+        funcionarios.add(funcionario);
+        FacesContext facesContext = FacesContext.getCurrentInstance();
+        funcionario = new Funcionario();
+        String meuNome="Mário Novais";
+        //criação da mensagem
+        FacesMessage faceMessage=new FacesMessage(null, "Funcionario Guardado com sucesso!"+" "+meuNome);
+        facesContext.addMessage(null, faceMessage);
+        
+        return "lista-funcionarios";
+    }
+
+    
+    
     
     
 }

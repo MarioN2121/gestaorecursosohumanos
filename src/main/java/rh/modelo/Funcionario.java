@@ -5,6 +5,8 @@
  */
 package rh.modelo;
 
+import java.util.Date;
+
 /**
  *
  * @author Ary
@@ -12,26 +14,38 @@ package rh.modelo;
 public class Funcionario {
     
     private String nome;
-    private String sobrenome;
-    
+    private String sobrenome;    
     private String departamento;
-    private int idade;
-    private double salario;
+    private Date dataNascimento;
+    private double salario;    
+    private String casa;
+    private String rua;
+    private String bairro;
+    private String municipio;
     
 
     public Funcionario() {
     }
 
-    public Funcionario(String nome, String sobrenome, String departamento, int idade, double salario) {
+    public Funcionario(String nome, String sobrenome, String departamento, double salario) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.departamento = departamento;
-        this.idade = idade;
         this.salario = salario;
+    }
+
+    public Funcionario(String nome, String sobrenome, String departamento, double salario, String casa, String rua, String bairro, String municipio) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.departamento = departamento;
+        this.salario = salario;
+        this.casa = casa;
+        this.rua = rua;
+        this.bairro = bairro;
+        this.municipio = municipio;
     }
     
     
-
     public String getNome() {
         return nome;
     }
@@ -56,20 +70,52 @@ public class Funcionario {
         this.departamento = departamento;
     }
 
-    public int getIdade() {
-        return idade;
+    public Date getDataNascimento() {
+        return dataNascimento;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
-
+    
     public double getSalario() {
         return salario;
     }
 
     public void setSalario(double salario) {
         this.salario = salario;
+    }
+
+    public String getCasa() {
+        return casa;
+    }
+
+    public void setCasa(String casa) {
+        this.casa = casa;
+    }
+
+    public String getRua() {
+        return rua;
+    }
+
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getMunicipio() {
+        return municipio;
+    }
+
+    public void setMunicipio(String municipio) {
+        this.municipio = municipio;
     }
     
     
