@@ -3,11 +3,11 @@ package db.util;
 
 import java.sql.*;
 
-public class ConecxaoDB {
+public class ConexaoDB {
     
     public static Connection ligarBD(){
         
-        //em substituiçao do lo 127.0.0.1
+        //em substituiçao do localhost podemos 127.0.0.1
         String URL_DB="jdbc:mysql://localhost:3306/gestaorh?serverTimezone=UTC";
         String DRIVER8="com.mysql.cj.jdbc.Driver";
         String DRIVER5="com.mysql.jdbc.Driver";

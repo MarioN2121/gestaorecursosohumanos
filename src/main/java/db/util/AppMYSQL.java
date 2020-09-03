@@ -9,7 +9,7 @@ public class AppMYSQL {
         String LISTA_DEPARTAMENTOS="SELECT * FROM departamento";
         
         try{
-            Connection conn = ConecxaoDB.ligarBD();
+            Connection conn = ConexaoDB.ligarBD();
             
             PreparedStatement ps = conn.prepareStatement(LISTA_DEPARTAMENTOS);
             ResultSet rs = ps.executeQuery();
