@@ -7,8 +7,8 @@ import java.util.Objects;
  * @author Ary
  */
 public class Departamento {
-    private String sigla;
-    private String nome;
+    String sigla;
+    String nome;
 
     public Departamento() {
     }

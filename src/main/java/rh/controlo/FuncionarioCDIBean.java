@@ -1,6 +1,7 @@
 
 package rh.controlo;
 
+import dao.FuncionarioDAO;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +25,9 @@ public class FuncionarioCDIBean implements Serializable{
     Funcionario funcionario2 = new Funcionario("Pedro","Silva","Gestor",77000.00);
     Funcionario funcionario3 = new Funcionario("Walter","Miranda","Contabilidade",77000.00);
     
+        
     Funcionario funcionario = new Funcionario(); 
+    FuncionarioDAO dao = new FuncionarioDAO();
     
     List<Funcionario> funcionarios = new ArrayList<>();
     
@@ -51,6 +54,7 @@ public class FuncionarioCDIBean implements Serializable{
         this.funcionario = funcionario;
     }
     
+    /*
     public String guardar(){
         funcionarios.add(funcionario);
         FacesContext facesContext = FacesContext.getCurrentInstance();
@@ -61,8 +65,14 @@ public class FuncionarioCDIBean implements Serializable{
         facesContext.addMessage(null, faceMessage);
         
         return "lista-funcionarios";
-    }
+    }*/
 
+    
+     public String save(){
+        dao.save(funcionario);
+        funcionario = new Funcionario();
+        return "funcionario";
+    }
     
     
     

@@ -3,14 +3,11 @@ package rh.modelo;
 
 import java.util.Date;
 
-/**
- *
- * @author Ary
- */
+
 public class Funcionario {
     
-    private String nome;
-    private String sobrenome;    
+    String nome;
+    String sobrenome;    
     private String departamento;
     private Date dataNascimento;
     private double salario;    

@@ -8,12 +8,12 @@ import java.sql.*;
 
 public class FuncionarioDAO {
     
-     String INSERT="INSERT INTO funcionario VALUES(?, ?)";
-    String UPDATE=" UPDATE funcionario SET nome_departamento=? WHERE sigla=?";
-    String DELETE=" DELETE FROM funcionario WHERE sigla=?";
+    String INSERT="INSERT INTO funcionario(nome,sobrenome) VALUES(?, ?)";
+    String UPDATE=" UPDATE funcionario SET nome=? WHERE idfuncionario=?";
+    String DELETE=" DELETE FROM funcionario WHERE idfuncionario=?";
     String SELECT_ALL="SELECT * FROM funcionario";
-    String SELECT_BY_NOME="SELECT * FROM funcionario WHERE nome_departamento=?";
-    String SELECT_BY_SIGLA="SELECT * FROM funcionario WHERE sigla=?";
+    String SELECT_BY_NOME="SELECT * FROM funcionario WHERE nome=?";
+    String SELECT_BY_SOBRENOME="SELECT * FROM funcionario WHERE sobrenome=?";
     
     
         

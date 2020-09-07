@@ -9,13 +9,13 @@
         
         <h:form>
             <h:panelGrid columns="2">
-                <h:outputLabel value="Nome" for="nome" />
-                <h:inputText id="nome" value="#{funcionarioMbean.funcionario.nome}"/>
+                <h:outputLabel value="Nome" for="nome"/>
+                <h:inputText id="nome" value="#{funcionarioCDIBean.funcionario.nome}"/>
                 <h:outputLabel value="Sobrenome" for="sobrenome"/>
-                <h:inputText id="sobrenome" value="#{funcionarioMbean.funcionario.sobrenome}"/>                                               
+                <h:inputText id="sobrenome" value="#{funcionarioCDIBean.funcionario.sobrenome}"/>                                               
             </h:panelGrid>
             
-            <h:commandButton value="Guardar" action="#{funcionarioMbean.guardar}"/>            
+            <h:commandButton value="Guardar" action="#{funcionarioCDIBean.save}"/>            
         </h:form>
     </h:body>
 </html>

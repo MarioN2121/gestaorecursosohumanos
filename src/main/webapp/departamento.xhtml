@@ -8,11 +8,11 @@
     <h:body>
         
         <h:form>
-            <h:panelGrid columns="2">
+            <h:panelGrid columns="2">                              
                 <h:outputLabel value="Sigla"/>
-                <h:inputText value="#{departamentoCDIBean.departamento.sigla}"/>                
+                <h:inputText value="#{departamentoCDIBean.departamento.sigla}"/> 
                 <h:outputLabel value="Nome"/>
-                <h:inputText value="#{departamentoCDIBean.departamento.nome}"/>
+                <h:inputText value="#{departamentoCDIBean.departamento.nome}"/>                 
             </h:panelGrid>
             <h:commandButton value="Guardar" action="#{departamentoCDIBean.save}"/>
             
