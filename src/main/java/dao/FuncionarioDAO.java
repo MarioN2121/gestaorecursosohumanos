@@ -26,6 +26,11 @@ public class FuncionarioDAO {
             ps = conn.prepareStatement(INSERT); 
             ps.setString(1, f.getNome());
             ps.setString(2, f.getSobrenome());
+            ps.setDouble(4,f.getSalario());
+            ps.setDate(5,new java.sql.Date(f.getDataNascimento().getTime()));
+            ps.setString(6,f.getDepartamento().getSigla());
+            ps.setInt(7,f.getMunicipio().getIdMunicipio());
+            
             ps.executeUpdate();
             ps.close();
             conn.close();

@@ -8,13 +8,13 @@ public class Funcionario {
     
     String nome;
     String sobrenome;    
-    private String departamento;
+    private Departamento departamento;
     private Date dataNascimento;
     private double salario;    
     private String casa;
     private String rua;
     private String bairro;
-    private String municipio;
+    private Municipio municipio;
     
 
     public Funcionario() {
@@ -23,19 +23,19 @@ public class Funcionario {
     public Funcionario(String nome, String sobrenome, String departamento, double salario) {
         this.nome = nome;
         this.sobrenome = sobrenome;
-        this.departamento = departamento;
+        //this.departamento = departamento;
         this.salario = salario;
     }
 
     public Funcionario(String nome, String sobrenome, String departamento, double salario, String casa, String rua, String bairro, String municipio) {
         this.nome = nome;
         this.sobrenome = sobrenome;
-        this.departamento = departamento;
+        //this.departamento = departamento;
         this.salario = salario;
         this.casa = casa;
         this.rua = rua;
         this.bairro = bairro;
-        this.municipio = municipio;
+        //this.municipio = municipio;
     }
     
     
@@ -55,13 +55,7 @@ public class Funcionario {
         this.sobrenome = sobrenome;
     }
 
-    public String getDepartamento() {
-        return departamento;
-    }
-
-    public void setDepartamento(String departamento) {
-        this.departamento = departamento;
-    }
+    
 
     public Date getDataNascimento() {
         return dataNascimento;
@@ -103,13 +97,23 @@ public class Funcionario {
         this.bairro = bairro;
     }
 
-    public String getMunicipio() {
+    public Departamento getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(Departamento departamento) {
+        this.departamento = departamento;
+    }
+
+    public Municipio getMunicipio() {
         return municipio;
     }
 
-    public void setMunicipio(String municipio) {
+    public void setMunicipio(Municipio municipio) {
         this.municipio = municipio;
     }
+
+    
     
     
     
