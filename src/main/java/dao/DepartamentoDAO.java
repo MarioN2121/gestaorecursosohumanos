@@ -7,13 +7,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DepartamentoDAO {
-    
- String INSERT = "INSERT INTO departamento VALUES(?, ?)";
+     
+    String INSERT = "INSERT INTO departamento VALUES(?, ?)";
     String UPDATE = "";
     String DELETE = "";
     String SELECT_ALL = "SELECT * FROM departamento";
     String SELECT_BY_NOME = "SELECT * FROM departamento d WHERE d.nome_departamento = ? ";
     String SELECT_BY_SIGLA = "";
+    
+    /*
+    String INSERT="INSERT INTO departamento VALUES(?, ?)";
+    String UPDATE=" UPDATE departamento SET nome_departamento=? WHERE sigla=?";
+    String DELETE=" DELETE FROM departamento WHERE sigla=?";
+    String SELECT_ALL="SELECT * FROM departamento";
+    String SELECT_BY_NOME="SELECT * FROM departamento d WHERE d.nome_departamento=?";
+    String SELECT_BY_SIGLA="SELECT * FROM departamento WHERE sigla=?";
+    */
 
     public void save(Departamento d) {
         PreparedStatement ps = null;

@@ -29,6 +29,7 @@ public class DepartamentoCDIBean {
     public String save(){
         dao.save(departamento);
         departamento = new Departamento();
+        departamentos = dao.listaDepartamentos();
         return "departamento";
     }
 
