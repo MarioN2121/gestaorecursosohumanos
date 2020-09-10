@@ -1,21 +1,55 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Registar Novo funcionario</title>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+        <h:outputStylesheet library="css" name="main.css"/>        
+        <h:outputScript library="js" name="jquery-3.5.1.min.js"/>
     </h:head>
-    <h:body>
-        
-        <h:form>
-            <h:panelGrid columns="2">
+    <h:body>        
+        <h:form id="funcionarioForm">
+            <div>
                 <h:outputLabel value="Nome" for="nome"/>
-                <h:inputText id="nome" value="#{funcionarioCDIBean.funcionario.nome}"/>
+                <div>
+                    <h:inputText id="nome" value="#{funcionarioCDIBean.funcionario.nome}"/>
+                </div>
+            </div>
+            <div>
                 <h:outputLabel value="Sobrenome" for="sobrenome"/>
-                <h:inputText id="sobrenome" value="#{funcionarioCDIBean.funcionario.sobrenome}"/>                                               
-            </h:panelGrid>
+                <div>
+                    <h:inputText id="sobrenome" value="#{funcionarioCDIBean.funcionario.sobrenome}"/>
+                </div>
+            </div>     
             
-            <h:commandButton value="Guardar" action="#{funcionarioCDIBean.save}"/>            
+            <div>
+                <h:outputLabel value="Departamento 01" for="departamento"/>
+                <div>
+                    <h:selectOneMenu id="departamento" value="#{funcionarioCDIBean.funcionario.departamento}" converter="departamentoConverter">
+                        <f:selectItems value="#{funcionarioCDIBean.selectDepartamentos}"/>
+                    </h:selectOneMenu>
+                </div>
+            </div> 
+            
+            <div>
+                <h:outputLabel value="Departamento 02" for="departamento"/>
+                <div>
+                    <h:selectOneMenu id="departamento2" value="#{funcionarioCDIBean.funcionario.departamento}" converter="departamentoConverter">                        
+                        <f:selectItems value="#{funcionarioCDIBean.listaDepartamentos}" var="dp" itemValue="#{dp}" itemLabel="#{dp.nome}"/>
+                    </h:selectOneMenu>
+                </div>
+            </div> 
+            
+            <div>
+                <div>
+                    <h:commandButton value="Guardar" action="#{funcionarioCDIBean.guardar}"/>
+                </div>
+            </div>
+            
+            
+            
         </h:form>
     </h:body>
 </html>

@@ -35,9 +35,7 @@ public class DepartamentoDAO {
             ps.setString(2, d.getNome());
             ps.executeUpdate();
         } catch (SQLException e) {
-
-            System.err.println("Erro ao inserir dados:"
-                    + " DepartamentoDAO:save" + e.getLocalizedMessage());
+            System.err.println("Erro ao inserir dados: DepartamentoDAO:save" + e.getLocalizedMessage());
         }
 
     }
@@ -52,17 +50,14 @@ public class DepartamentoDAO {
              ps = conn.prepareStatement(SELECT_ALL);
              rs =ps.executeQuery();
              while(rs.next()){
-             Departamento d = new Departamento();
-             d.setSigla(rs.getString(1));
-             d.setNome(rs.getString(2));
-             lista.add(d);
-             }
-             
+                Departamento d = new Departamento();
+                d.setSigla(rs.getString(1));
+                d.setNome(rs.getString(2));
+                lista.add(d);
+             }             
          }catch(SQLException ex){
              System.err.println("Erro ao ler dados: DepartamentoDAO:listaDepartamentos"+ex.getLocalizedMessage());
          }
-        
-                
         return lista;
     }
 
